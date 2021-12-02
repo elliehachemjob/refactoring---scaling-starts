@@ -8,7 +8,6 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import CardMedia from "@mui/material/CardMedia";
 import Rating from "@mui/material/Rating";
-import "../App.css";
 import SearchComponent from "../components/SearchComponent";
 import useConnectDashboard from "../hooks/useConnectDashboard";
 
@@ -27,7 +26,7 @@ export function Dashboard() {
           setSearchQuery(e.target.value);
         }}
       />
-      <div className="container">
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
         {items
           ? items.artists?.items
               ?.filter((item: any) =>
@@ -41,7 +40,7 @@ export function Dashboard() {
                       onClick={() => {
                         localStorage.setItem("id", filteredItem.id);
                       }}
-                      className="item"
+                      style={{ margin: "10px" }}
                       sx={{ maxWidth: 300 }}
                     >
                       <CardContent>

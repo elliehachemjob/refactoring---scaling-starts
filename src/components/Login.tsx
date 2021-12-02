@@ -8,7 +8,7 @@ export default function Login(props: any) {
     SCOPE_URI_PARAM,
   } = props;
 
-  const handleLogin = (props: any) => {
+  const handleLogin = () => {
     // @ts-ignore
     window.location = `${SPOTIFY_ENDPOINT_AUTHORIZATION}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${SCOPE_URI_PARAM}&response_type=token&show_dialog=true`;
   };

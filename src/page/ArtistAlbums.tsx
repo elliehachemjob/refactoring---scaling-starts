@@ -4,19 +4,18 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import CardMedia from "@mui/material/CardMedia";
-import "../App.css";
 import useConnectArtistAlbums from "../hooks/useConnectArtistAlbums";
 
 export function ArtistAlbums() {
   const [items, setItems] = useConnectArtistAlbums("", "accessToken", "id");
 
   return (
-    <div className="container">
+    <div className="container" style={{ display: "flex", flexWrap: "wrap" }}>
       {items
         ? items.items.map((item: any) => {
             return (
               <div>
-                <Card className="item" sx={{ maxWidth: 300 }}>
+                <Card style={{ margin: "10px" }} sx={{ maxWidth: 300 }}>
                   <CardContent>
                     {item.images
                       .filter((img: any) => img.height === 300)
