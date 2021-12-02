@@ -1,39 +1,14 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import CardMedia from "@mui/material/CardMedia";
-import Rating from "@mui/material/Rating";
 import "../App.css";
-import { useLocalstorage } from "rooks";
+import useConnectArtistAlbums from "../hooks/useConnectArtistAlbums";
 
 export function ArtistAlbums() {
-  const [items, setItems] = useState<any>();
-
-  useEffect(() => {
-    const datanew = localStorage.getItem("accessToken");
-    const idNew = localStorage.getItem("id"); // value
-
-    axios
-      .get(
-        `https://api.spotify.com/v1/artists/${idNew}/albums?include_groups=single%2Cappears_on&market=ES&limit=10&offset=5`,
-        {
-          headers: {
-            Authorization: `Bearer ${datanew}`,
-          },
-        }
-      )
-      .then((response) => {
-        setItems(response.data);
-      })
-
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  const [items, setItems] = useConnectArtistAlbums("", "accessToken", "id");
 
   return (
     <div className="container">

@@ -10,7 +10,6 @@ import CardMedia from "@mui/material/CardMedia";
 import Rating from "@mui/material/Rating";
 import "../App.css";
 import SearchComponent from "../components/SearchComponent";
-import { useLocalstorage } from "rooks";
 import useConnectDashboard from "../hooks/useConnectDashboard";
 
 export function Dashboard() {

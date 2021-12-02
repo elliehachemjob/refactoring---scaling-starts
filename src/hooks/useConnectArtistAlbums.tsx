@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function useConnectDashboard(
+export default function useConnectArtistAlbums(
   InitalValue: any,
   key1: any,
   key2: any
