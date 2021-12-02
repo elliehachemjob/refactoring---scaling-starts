@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import CardMedia from "@mui/material/CardMedia";
 import Card from "@mui/material/Card";
 
-export default function DisplayAlbum({ items }: any) {
+export default function DisplayArtistAlbums({ items }: any) {
   return (
     <div className="container" style={{ display: "flex", flexWrap: "wrap" }}>
       {items
