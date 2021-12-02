@@ -1,4 +1,3 @@
-import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ArtistAlbums } from "./page/ArtistAlbums";
 import { Dashboard } from "./page/Dashboard";
@@ -10,7 +9,6 @@ import {
 } from "./constants/credential";
 import useLogin from "./hooks/useLogin";
 import Login from "./components/Login";
-
 function App() {
   const [token, setToken] = useLogin("accessToken"); //for login
 
